@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CloudBudget - Адаптивная верстка</title>
-    <link rel="stylesheet" href="style.css">
+    <title>CloudBudget</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
 
-    <!-- Header -->
+    <!-- ШАПКА -->
     <header>
-        <div class="container header-inner">
-            <div class="logo">CLOUDBUDGET</div>
-            <nav>
+        <div class="header__inner">
+            <div class="header__logo">CLOUDBUDGET</div>
+            <nav class="header__nav">
                 <ul>
                     <li><a href="#">Обзор</a></li>
                     <li><a href="#">Особенности</a></li>
@@ -21,55 +23,57 @@
                     <li><a href="#">Войти</a></li>
                 </ul>
             </nav>
-            <a href="#" class="btn btn-outline">ВХОД</a>
+            <a href="#" class="header__btn">ВХОД</a>
+        </div>
+
+        <div class="header__content">
+            <h1>CLOUDBUDGET</h1>
+            <p>Управление бюджетом в для всех.<br>Всего 69,95 € в месяц после 7-дневной<br>пробной версии за 4,99 €</p>
+            <a href="#" class="header__cta">ПОПРОБОВАТЬ</a>
         </div>
     </header>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="container">
-            <h1>CLOUDBUDGET</h1>
-            <p>Управление бюджетом в для всех.<br>Всего 69,95 € в месяц после 7-дневной пробной версии за 4,99 €</p>
-            <a href="#" class="btn btn-white">ПОПРОБОВАТЬ</a>
-        </div>
-    </section>
-
-    <!-- About -->
+    <!-- О НАС -->
     <section class="about">
-        <div class="container about-inner">
-            <div class="about-text">
-                <h2>Простое приложение для управления бюджетом</h2>
-                <p>Наше приложение создано, чтобы вы могли в реальном времени управлять своим бюджетом и расходами в режиме онлайн с любого устройства. Оно предоставляет подробные отчеты, учитывает все ваши расходы и помогает найти новые пути экономии. Установите наше приложение и получите полный контроль над своим бюджетом.</p>
-                <a href="#">Узнать подробнее</a>
+        <div class="container">
+            <div class="about__inner">
+                <div class="about__text">
+                    <h2>Простое приложение для управления бюджетом</h2>
+                    <p>Наше приложение создано, чтобы вы могли в реальном времени управлять своим бюджетом и расходами в
+                        режиме онлайн с любого устройства. Оно предоставляет подробные отчеты, учитывает все ваши
+                        расходы и помогает найти новые пути экономии. Установите наше приложение и получите полный
+                        контроль над своим бюджетом.</p>
+                    <a href="#" class="about__link">Узнать подробнее</a>
+                </div>
+                <div class="about__img"></div>
             </div>
-            <div class="about-img"></div>
         </div>
     </section>
 
-    <!-- Features -->
+    <!-- ВОЗМОЖНОСТИ -->
     <section class="features">
         <div class="container">
-            <h2>Возможности</h2>
-            <div class="features-grid">
+            <h2 class="section__title">Возможности</h2>
+            <div class="features__grid">
                 <div class="card">
-                    <div class="card-img"></div>
-                    <div class="card-content">
+                    <div class="card__img"></div>
+                    <div class="card__content">
                         <h3>Поддерживает все валюты и карты</h3>
                         <p>Мы поддерживаем все популярные валюты и полностью обслуживаем операции.</p>
                         <a href="#">Подробнее</a>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-img"></div>
-                    <div class="card-content">
+                    <div class="card__img"></div>
+                    <div class="card__content">
                         <h3>Управляйте своими расходами на ходу</h3>
                         <p>Вы можете получить доступ к своей учетной записи из любой точки мира на любом устройстве.</p>
                         <a href="#">Подробнее</a>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-img"></div>
-                    <div class="card-content">
+                    <div class="card__img"></div>
+                    <div class="card__content">
                         <h3>Управление бюджетом осуществляется в облаке</h3>
                         <p>Наше приложение доступно в облаке, вы сможете управлять им на любом устройстве.</p>
                         <a href="#">Подробнее</a>
@@ -79,28 +83,28 @@
         </div>
     </section>
 
-    <!-- Tech -->
+    <!-- ТЕХНОЛОГИИ -->
     <section class="tech">
         <div class="container">
-            <h2>Технологии</h2>
-            <div class="tech-grid">
-                <div class="tech-item">
-                    <div class="tech-icon">☁️</div>
+            <h2 class="section__title">Технологии</h2>
+            <div class="tech__grid">
+                <div class="tech__item">
+                    <div class="tech__icon">☁️</div>
                     <h3>Облачное хранение</h3>
                     <p>Доступ к данным с любого устройства, где бы вы ни находились.</p>
                 </div>
-                <div class="tech-item">
-                    <div class="tech-icon">🛡️</div>
+                <div class="tech__item">
+                    <div class="tech__icon">🛡️</div>
                     <h3>Безопасность</h3>
                     <p>Возможность использования информации о ваших финансовых операциях.</p>
                 </div>
-                <div class="tech-item">
-                    <div class="tech-icon">📄</div>
+                <div class="tech__item">
+                    <div class="tech__icon">📄</div>
                     <h3>PDF Отчеты</h3>
                     <p>Скачивайте и просматривайте ваши отчеты в удобном формате PDF.</p>
                 </div>
-                <div class="tech-item">
-                    <div class="tech-icon">📊</div>
+                <div class="tech__item">
+                    <div class="tech__icon">📊</div>
                     <h3>CSV Отчеты</h3>
                     <p>Скачивайте и просматривайте ваши отчеты в удобном формате CSV.</p>
                 </div>
@@ -108,47 +112,53 @@
         </div>
     </section>
 
-    <!-- CTA -->
+    <!-- CTA БЛОК -->
     <section class="cta">
-        <div class="container cta-inner">
-            <div class="cta-text">
-                <h2>Сосредоточьтесь на экономии денег</h2>
-                <p>Мы помогаем вам следить за вашими привычками в расходах, чтобы вы могли легко определить и сократить ненужные расходы. Просто войдите в свою учетную запись.</p>
-                <div class="socials">
-                    <a href="#">▶</a>
-                    <a href="#">●</a>
+        <div class="container">
+            <div class="cta__inner">
+                <div class="cta__text">
+                    <h2>Сосредоточьтесь на экономии денег</h2>
+                    <p>Мы помогаем вам следить за вашими привычками в расходах, чтобы вы могли легко определить и
+                        сократить ненужные расходы. Просто войдите в свою учетную запись.</p>
+                    <div class="cta__socials">
+                        <a href="#">▶</a>
+                        <a href="#">●</a>
+                    </div>
                 </div>
+                <div class="cta__img"></div>
             </div>
-            <div class="cta-img"></div>
         </div>
     </section>
 
-    <!-- Contact Form -->
+    <!-- ФОРМА -->
     <section class="contact">
-        <div class="container contact-inner">
-            <div class="contact-text">
-                <h2>Напишите нам</h2>
-                <p>Остались вопросы или нужна помощь? Просто заполните форму ниже, и мы свяжемся с вами в течение 48 часов.</p>
-            </div>
-            <div class="contact-form">
-                <form>
+        <div class="container">
+            <div class="contact__inner">
+                <div class="contact__text">
+                    <h2>Напишите нам</h2>
+                    <p>Остались вопросы или нужна помощь? Просто заполните форму ниже, и мы свяжемся с вами в течение 48
+                        часов.</p>
+                </div>
+                <form class="contact__form">
                     <input type="text" placeholder="Имя" required>
                     <input type="tel" placeholder="Телефон" required>
-                    <button type="submit" class="btn btn-red">ОТПРАВИТЬ</button>
+                    <button type="submit" class="contact__btn">ОТПРАВИТЬ</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
+    <!-- ФУТЕР -->
+    <footer class="footer">
         <div class="container">
             <h4>Адрес:</h4>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 6011 Orchard Gate,<br>Palo Alto, CA 94304, USA</p>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 6011
+                Orchard Gate,<br>Palo Alto, CA 94304, USA</p>
             <br>
             <p>Copyright 2026 CloudBudget</p>
         </div>
     </footer>
 
 </body>
+
 </html>
