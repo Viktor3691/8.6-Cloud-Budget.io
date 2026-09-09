@@ -16,9 +16,9 @@ body {
   --white: #fff;
 }
 .container {
-  max-width: 1140px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 100px;
 }
 a {
   text-decoration: none;
@@ -33,7 +33,7 @@ ul {
   margin-bottom: 60px;
 }
 
-/* ===== ШАПКА ===== */
+/* ===== ШАПКА (НАВИГАЦИЯ ПО FIGMA) ===== */
 header {
   position: relative;
   background-color: var(--accent);
@@ -43,18 +43,20 @@ header {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  min-height: 739px;
+  min-height: 782px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Верхняя панель 100px */
 .header__inner {
   position: absolute;
-  top: 0;
+  top: 20px;
   left: 0;
   width: 100%;
-  padding: 40px 20px;
+  height: 100px;
+  padding: 0 168px; /* Отступы от краев как в макете */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -62,47 +64,113 @@ header {
   z-index: 10;
 }
 
+/* Логотип с иконкой облака */
 .header__logo {
-  font-size: 22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
   font-weight: 700;
+  letter-spacing: 1px;
 }
 
+.header__logo-icon {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
+/* Навигация */
 .header__nav ul {
   display: flex;
-  gap: 30px;
+  gap: 35px;
 }
 .header__nav a {
   color: var(--white);
+  letter-spacing: 0.5px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
   font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
 }
 .header__nav a:hover {
   border-bottom: 1px solid var(--white);
 }
 
+/* Блок справа (Язык + Кнопка) */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.header__lang {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.header__flag {
+  width: 24px;
+  height: 16px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+/* Кнопка ВХОД (Прозрачная) */
 .header__btn {
   border: 1px solid var(--white);
-  padding: 10px 25px;
+  background: transparent;
+  padding: 12px 30px;
   border-radius: 6px;
   color: var(--white);
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s;
 }
 .header__btn:hover {
   background: var(--white);
   color: var(--accent);
 }
 
+/* Контент Hero */
 .header__content {
   text-align: center;
   color: var(--white);
   background: transparent;
 }
 .header__content h1 {
-  font-size: 48px;
-  font-weight: 800;
-  margin-bottom: 30px;
+  /* CloudBudget */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 84px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: #ffffff;
 }
 .header__content p {
-  font-size: 18px;
-  margin-bottom: 50px;
+  /* Управление бюджетом в для всех. Всего 69,95 € в месяц после 7-дневной пробной версии за 4,99 € */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 150%;
+  /* or 36px */
+  text-align: center;
+
+  color: #ffffff;
 }
 .header__cta {
   background: var(--white);
@@ -110,7 +178,17 @@ header {
   padding: 15px 35px;
   border-radius: 6px;
   font-weight: 600;
+  font-size: 16px; /* Добавлено для соответствия размеру */
+
+  /* Сброс стандартных стилей кнопки */
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.3s ease;
+
+  margin-top: 50px;
 }
+
 .header__cta:hover {
   background: #f0f0f0;
 }
@@ -198,10 +276,10 @@ header {
   font-weight: 600;
 }
 
-/* ===== ТЕХНОЛОГИИ (Исправлено под Figma) ===== */
+/* ===== ТЕХНОЛОГИИ ===== */
 .tech {
   padding: 80px 0;
-  background: var(--white); /* Изменено с серого на белый */
+  background: var(--white);
 }
 .tech__grid {
   display: grid;
@@ -209,26 +287,18 @@ header {
   gap: 30px;
 }
 .tech__item {
-  position: relative; /* Для позиционирования цифр */
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   padding-top: 20px;
 }
-
-/* Добавляем большие серые цифры позади иконок */
 .tech__item::before {
   position: absolute;
-  font-family: "Lato";
-  font-style: normal;
-  font-size: 100px;
-
-  top: -25%;
+  top: -10%;
   left: 50%;
   transform: translateX(-50%);
-
-  font-weight: 600;
 
   z-index: 1;
   line-height: 1;
@@ -236,7 +306,13 @@ header {
   width: 117px;
   height: 120px;
 
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 100px;
   line-height: 120px;
+  /* identical to box height */
+  text-align: center;
 
   color: rgba(16, 16, 16, 0.08);
 }
@@ -252,27 +328,10 @@ header {
 .tech__item:nth-child(4)::before {
   content: "04";
 }
-.tech1 {
-  width: 80px;
-  height: 80px;
-}
-.tech2 {
-  width: 66px;
-  height: 66px;
-}
-.tech3 {
-  width: 70px;
-  height: 70px;
-}
-.tech4 {
-  width: 47px;
-  height: 54px;
-}
 
-/* Настраиваем иконку (Убираем круг и рамку) */
 .tech__icon {
   position: relative;
-  z-index: 2; /* Поверх цифры */
+  z-index: 2;
   width: 80px;
   height: 80px;
   display: flex;
@@ -280,11 +339,11 @@ header {
   align-items: flex-end;
   margin-bottom: 20px;
 }
-.tech__icon img {
-  width: 90px;
+/* .tech__icon img {
+  width: 100%;
   height: auto;
   object-fit: contain;
-}
+} */
 
 .tech__item h3 {
   font-size: 18px;
@@ -301,6 +360,11 @@ header {
   background: var(--accent);
   padding: 80px 0;
   color: var(--white);
+}
+
+.container__cta {
+  padding-left: 165px;
+  padding-right: 260px;
 }
 .cta__inner {
   display: flex;
@@ -410,8 +474,13 @@ header {
   }
   .header__inner {
     flex-direction: column;
+    height: auto;
     gap: 20px;
     text-align: center;
+    padding: 20px 0;
+  }
+  .header__actions {
+    margin-top: 10px;
   }
   .header__nav ul {
     flex-direction: column;
