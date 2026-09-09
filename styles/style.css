@@ -93,7 +93,7 @@ header {
 .header__content {
   text-align: center;
   color: var(--white);
-  background: transparent; /* Убрали белый градиент */
+  background: transparent;
 }
 .header__content h1 {
   font-size: 48px;
@@ -145,8 +145,13 @@ header {
   flex: 1;
   min-width: 300px;
   height: 350px;
-  background: #ddd;
   border-radius: 10px;
+  overflow: hidden;
+}
+.about__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* ===== ВОЗМОЖНОСТИ ===== */
@@ -168,7 +173,12 @@ header {
 }
 .card__img {
   height: 180px;
-  background: #ddd;
+  overflow: hidden;
+}
+.card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .card__content {
   padding: 30px;
@@ -188,10 +198,10 @@ header {
   font-weight: 600;
 }
 
-/* ===== ТЕХНОЛОГИИ ===== */
+/* ===== ТЕХНОЛОГИИ (Исправлено под Figma) ===== */
 .tech {
   padding: 80px 0;
-  background: var(--bg-gray);
+  background: var(--white); /* Изменено с серого на белый */
 }
 .tech__grid {
   display: grid;
@@ -199,26 +209,87 @@ header {
   gap: 30px;
 }
 .tech__item {
+  position: relative; /* Для позиционирования цифр */
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  padding-top: 20px;
 }
+
+/* Добавляем большие серые цифры позади иконок */
+.tech__item::before {
+  position: absolute;
+  font-family: "Lato";
+  font-style: normal;
+  font-size: 100px;
+
+  top: -25%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  font-weight: 600;
+
+  z-index: 1;
+  line-height: 1;
+
+  width: 117px;
+  height: 120px;
+
+  line-height: 120px;
+
+  color: rgba(16, 16, 16, 0.08);
+}
+.tech__item:nth-child(1)::before {
+  content: "01";
+}
+.tech__item:nth-child(2)::before {
+  content: "02";
+}
+.tech__item:nth-child(3)::before {
+  content: "03";
+}
+.tech__item:nth-child(4)::before {
+  content: "04";
+}
+.tech1 {
+  width: 80px;
+  height: 80px;
+}
+.tech2 {
+  width: 66px;
+  height: 66px;
+}
+.tech3 {
+  width: 70px;
+  height: 70px;
+}
+.tech4 {
+  width: 47px;
+  height: 54px;
+}
+
+/* Настраиваем иконку (Убираем круг и рамку) */
 .tech__icon {
-  font-size: 30px;
-  color: var(--accent);
-  border: 2px solid var(--accent);
+  position: relative;
+  z-index: 2; /* Поверх цифры */
   width: 80px;
   height: 80px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  border-radius: 50%;
+  align-items: flex-end;
   margin-bottom: 20px;
 }
+.tech__icon img {
+  width: 90px;
+  height: auto;
+  object-fit: contain;
+}
+
 .tech__item h3 {
   font-size: 18px;
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 .tech__item p {
   font-size: 14px;
@@ -253,13 +324,23 @@ header {
   font-size: 20px;
   margin-right: 15px;
 }
-.cta__img {
+.cta__socials img {
+  width: 35px;
+  height: auto;
+  margin-right: 10px;
+}
+.cta__img-wrap {
   flex: 1;
   min-width: 300px;
   height: 300px;
-  background: #c93846;
   border-radius: 10px;
-} /* Замените на фото */
+  overflow: hidden;
+}
+.cta__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 /* ===== КОНТАКТЫ ===== */
 .contact {
@@ -347,7 +428,7 @@ header {
     text-align: center;
   }
   .about__img,
-  .cta__img {
+  .cta__img-wrap {
     width: 100%;
   }
 }
