@@ -33,7 +33,7 @@ ul {
   margin-bottom: 60px;
 }
 
-/* ===== ШАПКА (НАВИГАЦИЯ ПО FIGMA) ===== */
+/* ===== ШАПКА  ===== */
 header {
   position: relative;
   background-color: var(--accent);
@@ -140,6 +140,38 @@ header {
   color: var(--accent);
 }
 
+/* ===== СТИЛИ БУРГЕРА ===== */
+.header__burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 30;
+}
+
+.header__burger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--white);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Анимация бургера в крестик */
+.header__burger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.header__burger.active span:nth-child(2) {
+  opacity: 0;
+}
+.header__burger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 /* Контент Hero */
 .header__content {
   text-align: center;
@@ -147,7 +179,6 @@ header {
   background: transparent;
 }
 .header__content h1 {
-  /* CloudBudget */
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
@@ -157,19 +188,15 @@ header {
   align-items: center;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-
   color: #ffffff;
 }
 .header__content p {
-  /* Управление бюджетом в для всех. Всего 69,95 € в месяц после 7-дневной пробной версии за 4,99 € */
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 150%;
-  /* or 36px */
   text-align: center;
-
   color: #ffffff;
 }
 .header__cta {
@@ -178,9 +205,8 @@ header {
   padding: 15px 35px;
   border-radius: 6px;
   font-weight: 600;
-  font-size: 16px; /* Добавлено для соответствия размеру */
+  font-size: 16px;
 
-  /* Сброс стандартных стилей кнопки */
   border: none;
   cursor: pointer;
   font-family: inherit;
@@ -243,24 +269,48 @@ header {
   gap: 30px;
 }
 
+/* Сама карточка становится прозрачным контейнером */
 .card {
-  background: var(--white);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
+  background: transparent;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
+
+/* Картинка сверху */
 .card__img {
-  height: 180px;
+  height: 250px;
+  width: 100%;
   overflow: hidden;
 }
 .card__img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
+
+/* Белый блок, который наезжает на картинку */
 .card__content {
-  padding: 30px;
+  position: relative;
+  z-index: 10;
+  background: var(--white);
+
+  /* Магия наложения: поднимаем блок вверх */
+  margin: -50px auto 0;
+
+  /* Блок уже картинки по бокам, как в макете */
+  width: calc(100% - 60px);
+  padding: 30px 20px;
+
+  /* Текст строго по центру */
+  text-align: center;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  flex-grow: 1;
 }
+
 .card__content h3 {
   font-size: 18px;
   margin-bottom: 15px;
@@ -274,6 +324,7 @@ header {
   color: var(--accent);
   font-size: 14px;
   font-weight: 600;
+  display: inline-block;
 }
 
 /* ===== ТЕХНОЛОГИИ ===== */
@@ -311,7 +362,6 @@ header {
   font-weight: 700;
   font-size: 100px;
   line-height: 120px;
-  /* identical to box height */
   text-align: center;
 
   color: rgba(16, 16, 16, 0.08);
@@ -339,11 +389,6 @@ header {
   align-items: flex-end;
   margin-bottom: 20px;
 }
-/* .tech__icon img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-} */
 
 .tech__item h3 {
   font-size: 18px;
@@ -468,23 +513,48 @@ header {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media (max-width: 768px) {
-  .header__content h1 {
-    font-size: 32px;
+  /* Показываем бургер */
+  .header__burger {
+    display: flex;
   }
+
+  /* Настройки шапки под мобильный вид */
   .header__inner {
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
     height: auto;
-    gap: 20px;
-    text-align: center;
-    padding: 20px 0;
+    gap: 0;
+    text-align: left;
+    padding: 20px 40px; /* Адаптируем отступы */
   }
+
+  /* Скрываем меню и действия по умолчанию */
+  .header__nav,
   .header__actions {
-    margin-top: 10px;
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
   }
+
+  /* Открытие через JS классом .open */
+  .header__nav.open,
+  .header__actions.open {
+    display: flex;
+  }
+
   .header__nav ul {
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .header__content h1 {
+    font-size: 32px;
   }
   .features__grid,
   .tech__grid {

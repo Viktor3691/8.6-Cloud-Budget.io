@@ -30,7 +30,7 @@
                 <img src="./images/cloud-icon.svg" alt="Cloud Icon" class="header__logo-icon">
                 <span>CLOUDBUDGET</span>
             </div>
-            <nav class="header__nav">
+            <nav class="header__nav" id="navMenu">
                 <ul>
                     <li><a href="#">Обзор</a></li>
                     <li><a href="#">Особенности</a></li>
@@ -39,13 +39,20 @@
                     <li><a href="#">Войти</a></li>
                 </ul>
             </nav>
-            <div class="header__actions">
+            <div class="header__actions" id="navActions">
                 <div class="header__lang">
                     <img src="./images/us-flag.png" alt="US Flag" class="header__flag">
                     <span>EN</span>
                 </div>
                 <a href="#" class="header__btn">ВХОД</a>
             </div>
+
+            <!-- Кнопка Бургер -->
+            <button class="header__burger" id="burger" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
 
         <div class="header__content">
@@ -180,6 +187,19 @@
             <p>Copyright 2026 CloudBudget</p>
         </div>
     </footer>
+
+    <!-- СКРИПТ ДЛЯ БУРГЕРА -->
+    <script>
+        const burger = document.getElementById('burger');
+        const nav = document.getElementById('navMenu');
+        const actions = document.getElementById('navActions');
+
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('open');
+            actions.classList.toggle('open');
+            burger.classList.toggle('active');
+        });
+    </script>
 
 </body>
 
