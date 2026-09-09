@@ -37,7 +37,6 @@ ul {
 header {
   position: relative;
   background-color: var(--accent);
-  /* Правильный путь к картинке из папки styles */
   background-image:
     linear-gradient(rgba(237, 76, 92, 0.85), rgba(237, 76, 92, 0.85)),
     url("../images/hero.png");
@@ -148,7 +147,7 @@ header {
   height: 350px;
   background: #ddd;
   border-radius: 10px;
-} /* Замените на ваше фото */
+}
 
 /* ===== ВОЗМОЖНОСТИ ===== */
 .features {
@@ -170,7 +169,7 @@ header {
 .card__img {
   height: 180px;
   background: #ddd;
-} /* Замените на фото */
+}
 .card__content {
   padding: 30px;
 }
